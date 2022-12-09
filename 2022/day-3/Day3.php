@@ -22,16 +22,13 @@ final class Day3
             while (($line = fgets($handle)) !== false) {
                 $line = trim($line);
 
-                if ($groupCount === self::MAX_GROUP_SIZE) {
-                    $groupCount = 0;
-                }
-
                 $bags[$groupCount] = str_split($line);
                 $groupCount++;
 
                 if ($groupCount === self::MAX_GROUP_SIZE) {
                     $overlap = array_intersect(...$bags);
                     $count += $this->getValue(array_pop($overlap));
+                    $groupCount = 0;
                 }
             }
 
