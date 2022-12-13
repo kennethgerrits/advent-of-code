@@ -68,10 +68,12 @@ final class Day5
                 $to = (int) $movement[5];
 
                 // Move crates
+                $stackOfCrates = [];
                 for ($i = 0; $i < $amount; $i++) {
                     $crateToMove = array_pop($cargo[$from]);
-                    array_push($cargo[$to], $crateToMove);
+                    array_unshift($stackOfCrates, $crateToMove);
                 }
+                array_push($cargo[$to], ...$stackOfCrates);
             }
 
             // Create code from cargo reading left to right
