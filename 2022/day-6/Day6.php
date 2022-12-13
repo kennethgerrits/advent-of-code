@@ -23,7 +23,7 @@ final class Day6
                 while (true) {
                     // Set starting position
                     if ($charsRead === 0) {
-                        for ($i = 0; $i < 4; $i++) {
+                        for ($i = 0; $i < 14; $i++) {
                             $sequence[] = array_shift($inputSignalChars);
                             $charsRead++;
                         }
